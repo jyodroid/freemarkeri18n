@@ -9,10 +9,10 @@
 <h1><@spring.message "greetings"/></h1>
 <span><@spring.message "lang.change"/></span>:
 <select id="locales">
-    <option value=""></option>
+    <option value="">Select</option>
     <option value="en"><@spring.message "lang.en"/></option>
-    <option value="sp"><@spring.message "lang.sp"/></option>
-    <option value="pt"><@spring.message "lang.pt"/></option>
+    <option value="sp_CO"><@spring.message "lang.sp"/></option>
+    <option value="pt_BR"><@spring.message "lang.pt"/></option>
 </select>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">

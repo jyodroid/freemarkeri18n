@@ -9,9 +9,4 @@ public class FreemarkerIntController {
     public String getInternationalPage(){
         return "international";
     }
-
-    @GetMapping("/international/hardcoded")
-    public String getInternationalHardcodedPage(){
-        return "international_hc";
-    }
 }

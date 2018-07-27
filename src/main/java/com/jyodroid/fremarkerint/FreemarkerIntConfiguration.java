@@ -7,8 +7,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
-import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
 
@@ -20,12 +20,12 @@ public class FreemarkerIntConfiguration implements WebMvcConfigurer {
     private static final String LOCALE_SOURCE = "locale/messages";
 
     //This bean is created inorder to determine which locale is currently being used
-    //Can use session, cookies, Accept-language header of fixed value
+    //Can use session, cookies, Accept-language header or fixed value
     @Bean
     public LocaleResolver localeResolver() {
-        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();//SessionLocaleResolver use session based resolver
-        sessionLocaleResolver.setDefaultLocale(Locale.US);
-        return sessionLocaleResolver;
+        CookieLocaleResolver cookieLocaleResolver = new CookieLocaleResolver();
+        cookieLocaleResolver.setDefaultLocale(Locale.US);
+        return cookieLocaleResolver;
     }
 
     //Switch to a new locale based on the value of the lang parameter appended to a request
