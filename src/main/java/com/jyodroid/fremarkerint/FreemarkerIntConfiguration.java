@@ -17,7 +17,8 @@ public class FreemarkerIntConfiguration implements WebMvcConfigurer {
 
     private static final String LANG_PARAMETER = "lang";
     private static final String UTF_ENCODING = "UTF-8";
-    private static final String LOCALE_SOURCE = "locale/messages";
+    private static final String MAIN_SOURCE = "locale/main/messages";
+    private static final String LANG_SOURCE = "locale/lang/messages";
 
     //This bean is created inorder to determine which locale is currently being used
     //Can use session, cookies, Accept-language header or fixed value
@@ -39,7 +40,9 @@ public class FreemarkerIntConfiguration implements WebMvcConfigurer {
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename(LOCALE_SOURCE);
+
+        messageSource.setBasenames(MAIN_SOURCE, LANG_SOURCE);
+
         messageSource.setDefaultEncoding(UTF_ENCODING);
         return messageSource;
     }
