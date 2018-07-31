@@ -17,7 +17,7 @@ public class FreemarkerIntConfiguration implements WebMvcConfigurer {
 
     private static final String LANG_PARAMETER = "lang";
     private static final String UTF_ENCODING = "UTF-8";
-    private static final String MAIN_SOURCE = "locale/main/messages";
+    private static final String MAIN_SOURCE = "locale/main/greetings";
     private static final String LANG_SOURCE = "locale/lang/messages";
 
     //This bean is created inorder to determine which locale is currently being used
